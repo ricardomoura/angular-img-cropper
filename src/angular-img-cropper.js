@@ -1,4 +1,5 @@
 angular.module('angular-img-cropper', []).directive("imageCropper", ['$document', '$window', 'imageCropperDataShare', function ($document, $window, imageCropperDataShare) {
+    var fillColor = 'rgba(56, 158, 255, 1)';
     return {
         scope: {
             image: "=",
@@ -197,8 +198,7 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                     ctx.lineTo(this.position.x, this.position.y);
                     ctx.closePath();
                     ctx.lineWidth = 2;
-                    ctx.strokeStyle = 'rgba(255,228,0,1)';
-                    ctx.stroke();
+                    ctx.fillStyle = fillColor;
                 };
                 CornerMarker.prototype.drawCornerFill = function (ctx) {
                     var sideLength = 10;
